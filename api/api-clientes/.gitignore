@@ -1,0 +1,93 @@
+# =========================
+# Build / Compiled
+# =========================
+dist/
+build/
+coverage/
+.nyc_output/
+
+# =========================
+# Dependencies
+# =========================
+node_modules/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary files
+# =========================
+.temp/
+.tmp/
+tmp/
+
+# =========================
+# Runtime
+# =========================
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# =========================
+# Diagnostic reports
+# =========================
+report.*.json
+
+# =========================
+# IDE / Editors
+# =========================
+.idea/
+.project
+.classpath
+.c9/
+.settings/
+*.launch
+*.sublime-workspace
+
+# =========================
+# VSCode
+# =========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# =========================
+# Docker
+# =========================
+docker-data/
+postgres-data/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Misc
+# =========================
+*.tgz
+*.tar.gz

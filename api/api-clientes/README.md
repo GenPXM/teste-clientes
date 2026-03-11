@@ -1,0 +1,16 @@
+Backend
+1-Clone o projeto "git clone https://github.com/GenPXM/teste-milliontec.git" 
+2-Vá até a pasta no terminal api-clientes
+3-De um npm install 
+4-Rode o Docker para subir o banco com "docker compose up -d"
+5-Verifique se subiu corretamente com "docker ps"
+6-Rode a aplicação com "npm run start:dev"
+**sweggar da aplicação em "(http://localhost:3000/api#/)"
+
+Frontend 
+1-Entre na pasta frontend-clientes no terminal 
+2-De um "npm install"
+3-Rode a aplicação com "npm run dev"
+4-Faça Login com admin e senha admin
+**Caso queira cadastrar um login na api basta acessar o sweggar da aplicação em "(http://localhost:3000/api#/)"
+
