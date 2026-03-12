@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { TextField, Box } from "@mui/material";
 import { useState, useEffect } from "react";
+import type { UpdateClient } from "../types/Client";
 
 interface Client {
   name: string;
@@ -10,8 +11,8 @@ interface Client {
 }
 
 interface Props {
-  initialData?: Client;
-  onSubmit: (data: Client) => void;
+  initialData: Client;
+  onSubmit: (data: UpdateClient) => Promise<void>;
 }
 
 export default function ClientForm({ initialData, onSubmit }: Props) {
@@ -24,7 +25,14 @@ export default function ClientForm({ initialData, onSubmit }: Props) {
 
   useEffect(() => {
     if (initialData) {
-      setClient(initialData);
+      const { name, email, phone, address } = initialData;
+
+      setClient({
+        name,
+        email,
+        phone,
+        address,
+      });
     }
   }, [initialData]);
 

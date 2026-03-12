@@ -5,3 +5,10 @@ export interface Client {
   phone: string;
   address: string;
 }
+
+export interface UpdateClient {
+  name: string
+  email: string
+  phone: string
+  address: string
+}

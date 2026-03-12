@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { getClients } from "../services/clientService";
 import { useNavigate } from "react-router-dom";
-import type { Client } from "../types/Client";
+import type { Client, UpdateClient } from "../types/Client";
 import { Pagination } from "@mui/material";
 
 import {
@@ -57,11 +57,9 @@ export default function ClientsPage() {
     }
   };
 
-  const handleSubmit = async (data: Client) => {
+  const handleSubmit = async (data: UpdateClient) => {
     if (selectedClient) {
-      const { id, ...updateData } = data;
-
-      await api.patch(`/clients/${selectedClient.id}`, updateData);
+      await api.patch(`/clients/${selectedClient.id}`, data);
 
       setOpen(false);
       setSelectedClient(null);
@@ -146,7 +144,7 @@ export default function ClientsPage() {
           {selectedClient && (
             <ClientEditForm
               initialData={selectedClient}
-              onSubmit={handleSubmit} 
+              onSubmit={handleSubmit}
             />
           )}
         </DialogContent>
