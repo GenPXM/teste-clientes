@@ -146,7 +146,7 @@ export default function ClientsPage() {
           {selectedClient && (
             <ClientEditForm
               initialData={selectedClient}
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit} 
             />
           )}
         </DialogContent>
