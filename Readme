@@ -1,5 +1,5 @@
 Backend 
-1-Clone o projeto "git clone https://github.com/GenPXM/teste-milliontec.git" 
+1-Clone o projeto "git clone https://github.com/GenPXM/teste-clientes.git" 
 2-Vá até a pasta no terminal api-clientes 
 3-De um npm install 
 4-Rode o Docker para subir o banco com "docker compose up -d" 
