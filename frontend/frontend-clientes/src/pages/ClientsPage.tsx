@@ -127,7 +127,7 @@ export default function ClientsPage() {
             count={lastPage}
             page={page}
             color="primary"
-            onChange={(event, value) => {
+            onChange={(_, value) => {
               loadClients(value);
             }}
           />
