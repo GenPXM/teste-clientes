@@ -70,34 +70,46 @@ export default function ClientsPage() {
   return (
     <Box
       sx={{
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        minHeight: "100vh",
         background: "#f5f7fb",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        px: 2,
       }}
     >
       <Paper
         elevation={6}
         sx={{
-          width: 900,
-          padding: 4,
+          width: "100%",
+          maxWidth: 900,
+          padding: { xs: 2, md: 4 },
           borderRadius: 3,
         }}
       >
         <Stack
-          direction="row"
+          direction={{ xs: "column", md: "row" }}
           justifyContent="space-between"
-          alignItems="center"
+          alignItems={{ xs: "flex-start", md: "center" }}
+          spacing={2}
           mb={3}
         >
-          <Typography variant="h4" fontWeight="bold">
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            sx={{ fontSize: { xs: "1.6rem", md: "2rem" } }}
+          >
             Clientes
           </Typography>
 
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={2}
+            width={{ xs: "100%", md: "auto" }}
+          >
             <Button
+              fullWidth
               variant="contained"
               color="primary"
               onClick={() => navigate("/clients/new")}
@@ -106,6 +118,7 @@ export default function ClientsPage() {
             </Button>
 
             <Button
+              fullWidth
               variant="contained"
               color="success"
               onClick={() => generatePDF(clients)}
@@ -113,13 +126,14 @@ export default function ClientsPage() {
               Gerar PDF
             </Button>
 
-            <Button variant="outlined" color="error" onClick={logout}>
+            <Button fullWidth variant="outlined" color="error" onClick={logout}>
               Sair
             </Button>
           </Stack>
         </Stack>
 
         <ClientTable clients={clients} onEdit={handleEdit} />
+
         <Box mt={3} display="flex" justifyContent="center">
           <Pagination
             count={lastPage}

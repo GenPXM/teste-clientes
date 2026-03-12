@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-import { TextField, Button, Box, Paper, Typography } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import { useState, useEffect } from "react";
 
 interface Client {
@@ -41,77 +41,53 @@ export default function ClientForm({ initialData, onSubmit }: Props) {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        height: "100vh",
-        background: "#f5f7fb",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Paper
-        elevation={6}
-        sx={{
-          width: 400,
-          padding: 4,
-          borderRadius: 3,
-        }}
+    <Box component="form" onSubmit={handleSubmit}>
+      <TextField
+        label="Nome"
+        name="name"
+        value={client.name}
+        onChange={handleChange}
+        fullWidth
+        margin="normal"
+        required
+      />
+
+      <TextField
+        label="Email"
+        name="email"
+        value={client.email}
+        onChange={handleChange}
+        fullWidth
+        margin="normal"
+        required
+      />
+
+      <TextField
+        label="Telefone"
+        name="phone"
+        value={client.phone}
+        onChange={handleChange}
+        fullWidth
+        margin="normal"
+      />
+
+      <TextField
+        label="Endereço"
+        name="address"
+        value={client.address}
+        onChange={handleChange}
+        fullWidth
+        margin="normal"
+      />
+
+      <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+        sx={{ mt: 3 }}
       >
-        <Typography variant="h5" mb={2} fontWeight="bold">
-          {initialData ? "Editar Cliente" : "Cadastrar Cliente"}
-        </Typography>
-
-        <Box component="form" onSubmit={handleSubmit}>
-          <TextField
-            label="Nome"
-            name="name"
-            value={client.name}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            required
-          />
-
-          <TextField
-            label="Email"
-            name="email"
-            value={client.email}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            required
-          />
-
-          <TextField
-            label="Telefone"
-            name="phone"
-            value={client.phone}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-          />
-
-          <TextField
-            label="Endereço"
-            name="address"
-            value={client.address}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-          />
-
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            sx={{ mt: 2 }}
-          >
-            Salvar
-          </Button>
-        </Box>
-      </Paper>
+        Salvar
+      </Button>
     </Box>
   );
 }
